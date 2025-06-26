@@ -1,16 +1,12 @@
-#funktionen_temperatur.py
-def celsius_to_fahrenheit(c):
-    """Convert Celsius to Fahrenheit."""
-    return (c * 9/5) + 32
+#funktion aus Woche02_Kap4/funktionen_temperatur.py
+#from datetime import datetime
+# from sensormanager import Sensor, SensorManager
 
-def fahrenheit_to_kelvin(c):
-    """Convert Fahrenheit to Celsius."""
-    return (c - 32) * 5/9
-def temperatur_ausgeben(c):
-    f = celsius_to_fahrenheit(c)
-    k = fahrenheit_to_kelvin(c)
-    print(f"{c}°C = {f:.2f} °F = {k:.2f} Kelvin")
-    
-temperatur_ausgeben(25)
-temperatur_ausgeben(-10)    
-    
+def temperaturwarnung(temp_c):
+    """Gibt eine Warnung aus, wenn die Temperatur über 30 Grad Celsius liegt."""
+    if temp_c < 0:
+        return f"❄️ Temperatur ist zu niedrig: {temp_c} °C. Frostgefahr!"
+    elif temp_c > 35:
+        return "🔥 Hitzewarnung"
+    else:
+        return f"Temperatur ist im normalen Bereich: {temp_c} °C."
